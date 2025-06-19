@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Weather in Korea 🌏</title>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="./style01.css" />
+  <!-- Leaflet CSS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Weather in Korea 🌏</h1>
+    <p>Check the latest weather in major Korean cities 🌤️</p>
+  </div>
+
+  <nav class="nav">
+    <ul class="city-buttons">
+      <li><button data-city="Seoul" data-lat="37.5665" data-lon="126.9780">Seoul</button></li>
+      <li><button data-city="Busan" data-lat="35.1796" data-lon="129.0756">Busan</button></li>
+      <li><button data-city="Incheon" data-lat="37.4563" data-lon="126.7052">Incheon</button></li>
+      <li><button data-city="Daejeon" data-lat="36.3504" data-lon="127.3845">Daejeon</button></li>
+      <li><button data-city="Daegu" data-lat="35.8714" data-lon="128.6014">Daegu</button></li>
+      <li><button data-city="Gwangju" data-lat="35.1595" data-lon="126.8526">Gwangju</button></li>
+          <div class="search-container" style="position: relative; display: inline-block;">
+      <input
+        style="border-radius: 20px; padding: 3px; width: 100%;"
+        type="text"
+        id="search-input"
+        placeholder="Enter city name 🔎"
+      />
+      <ul
+        id="city-dropdown"
+        style="position: absolute; top: 100%; left: 0; width: 100%; background-color: white; border: 1px solid #ccc; border-radius: 5px; list-style: none; padding: 0; margin: 0; display: none; z-index: 1000;"
+      ></ul>
+    </div>
+  </nav>
+<br>
+<div class="top-row" style="display: flex; align-items: flex-start; gap: 1rem; text-align: center;">
+  <div>
+    <div style="background-color: #ccc; border-radius: 15px; padding: 0.5em;">
+      <h3>Today</h3>
+    </div>
+    <br>
+    <div id="today" style="background-color: rgb(219, 234, 239); height: 540px; border-radius: 10px;"></div> 
+  </div>
+
+  <div>
+    <div style="background-color: #ccc; border-radius: 15px; padding: 0.5em;">
+      <h3>Tomorrow</h3>
+    </div>
+    <br>
+    <div id="tomorrow" style="background-color: rgb(219, 234, 239); height: 540px; border-radius: 10px;"></div> 
+  </div>
+
+  <div id="map" style="flex: 1; background-color: lightblue; border-radius: 20px; height: 610px;"></div>
+</div>
+<br> 
+<div id="slider-container" style="align-items: center; justify-content: center; overflow-x: auto; white-space: nowrap; display: flex; gap: 0.5em; padding: 1rem; background-color: #ffffff; border-radius: 15px;">
+</div>
+  
+<div id="forecast" class="forecast-container"></div>
+
+<div class="container" style="display: flex; flex-direction: column; align-items: center; gap: 1rem; text-align: center; padding: 1rem; background-color: #000000; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+  <canvas id="climateChart" width="800" height="400" style="max-width: 100%; border: 1px solid #ccc; border-radius: 10px;"></canvas>
+</div>
+     
+      
+</div>
+
+  <footer class="site-footer">
+    <p>&copy; 2025 Weather in Korea. All rights reserved.</p>
+    <p>Weather data from <a href="https://openweathermap.org/api" target="_blank">OpenWeatherMap</a></p>
+    <p>
+      <a href="https://github.com/yesonnim/weather" target="_blank">GitHub</a>
+      <a href="https://www.canva.com/design/DAGpQE_iZh8/YxDNq7pbduOC9TVK0lj3pA/edit?utm_content=DAGpQE_iZh8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Presentation</a>
+    </p>
+  </footer>
+
+  <script src="./weather12.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
